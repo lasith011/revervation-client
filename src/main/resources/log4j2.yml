@@ -1,0 +1,21 @@
+Configuration:
+  status: info
+
+  appenders:
+    Console:
+      name: LogToConsole
+      PatternLayout:
+        Pattern: "[%t] %c{1} - %msg%n"
+
+  Loggers:
+    logger:
+      - name: com.enctor.booking
+        level: info
+        additivity: false
+        AppenderRef:
+          - ref: LogToConsole
+
+    Root:
+      level: info
+      AppenderRef:
+        ref: LogToConsole
